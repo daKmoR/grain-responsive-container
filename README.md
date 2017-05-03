@@ -20,16 +20,18 @@ Allows you to easily define is-mobile, is-tablet, is-desktop for your element so
 ```html
 <style>
   grain-responsive-container {
-    --background: #FFFAA5;
+    --mobile-background: #FFFAA5;
     --tablet-background: #ABFF8A;
   }
-  grain-responsive-container[is-tablet] {
+  grain-responsive-container[is-mobile] {
     border: 1px solid #E76C4A;
   }
 </style>
 <grain-responsive-container>
-  I will be yellow on desktop and green on tablet just by using css variables.
-  For everything else I can use the is-mobile, is-tablet, is-desktop attribute of the element. 
+  I will be yellow on tablet and green on mobile just by using css variables.
+  For everything else I can use the is-mobile, is-tablet, is-desktop attribute
+  of the element.
+  PS: is-desktop does not work in this inline demo as it's an iframe
 </grain-responsive-container>
 ```
 

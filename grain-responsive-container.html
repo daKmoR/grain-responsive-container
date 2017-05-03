@@ -6,8 +6,9 @@
 	<template>
 		<style>
 			:host {
-				--primary-background: none;
-				--primary-text-color: inherit;
+				--background: none;
+				--mobile-background: none;
+				--tablet-background: none;
 				--padding: 0px;
 				--mobile-padding: 0px;
 				--tablet-padding: 0px;
@@ -17,8 +18,7 @@
 
 				width: var(--width);
 				padding: var(--padding);
-				background: var(--primary-background);
-				color: var(--primary-text-color);
+				background: var(--background);
 
 				display: flex;
 				justify-content: center;
@@ -30,10 +30,12 @@
 			:host([is-mobile]) {
 				width: var(--mobile-width);
 				padding: var(--mobile-padding);
+				background: var(--mobile-background);
 			}
 			:host([is-tablet]) {
 				width: var(--tablet-width);
 				padding: var(--tablet-padding);
+				background: var(--tablet-background);
 			}
 
 			:host([layout=fill]) {
