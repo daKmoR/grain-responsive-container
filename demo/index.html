@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+	<title>grain-responsive-container demo</title>
+
+	<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+	<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+	<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+	<link rel="import" href="../grain-responsive-container.html">
+
+</head>
+<body>
+<div class="vertical-section-container centered">
+	<h3>Basic grain-read-more demo</h3>
+	<demo-snippet>
+		<template>
+<style>
+	grain-responsive-container {
+		--width: 800px;
+		--tablet-width: 400px;
+	}
+</style>
+<grain-responsive-container>
+	I am an responsive element. I do get an attribute for is-mobile, is-tablet, is-desktop when you resize the window.
+	I can use this information to change styles and/or attributes depending on it.
+
+	Here we have defined a different width for every state
+	<pre>
+--width: 100%;
+--mobile-width: 100%;
+--tablet-width: 100%;
+	</pre>
+
+	We also have an Attribute marked that will only be visible on mobile due to the `mobile-marked="true"`.
+
+	The default media-queries for these elements are
+	<pre>
+mobile-query="(max-width: 425px)"
+tablet-query="(min-width: 426px) and (max-width: 1024px)"
+desktop-query="(min-width: 1025px)
+	</pre>
+	Just modify them as needed.
+
+</grain-responsive-container>
+		</template>
+	</demo-snippet>
+</div>
+</body>
+</html>

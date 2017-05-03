@@ -1,0 +1,61 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../grain-update-inline-style-behavior/grain-update-inline-style-behavior.html">
+<link rel="import" href="../grain-responsive-behavior/grain-responsive-behavior.html">
+
+<dom-module id="grain-responsive-container">
+	<template>
+		<style>
+			:host {
+				--primary-background: none;
+				--primary-text-color: inherit;
+				--padding: 0px;
+				--mobile-padding: 0px;
+				--tablet-padding: 0px;
+				--width: 100%;
+				--mobile-width: 100%;
+				--tablet-width: 100%;
+
+				width: var(--width);
+				padding: var(--padding);
+				background: var(--primary-background);
+				color: var(--primary-text-color);
+
+				display: flex;
+				justify-content: center;
+				position: relative;
+				box-sizing: border-box;
+				flex-direction: column;
+			}
+
+			:host([is-mobile]) {
+				width: var(--mobile-width);
+				padding: var(--mobile-padding);
+			}
+			:host([is-tablet]) {
+				width: var(--tablet-width);
+				padding: var(--tablet-padding);
+			}
+
+			:host([layout=fill]) {
+				display: flex;
+				height: 100%;
+				align-items: center;
+			}
+		</style>
+
+		<slot></slot>
+
+	</template>
+
+	<script>
+
+		class GrainResponsiveContainer extends GrainUpdateInlineStyleBehavior(GrainResponsiveBehavior(Polymer.Element)) {
+
+			static get is() { return 'grain-responsive-container'; }
+
+		}
+
+		// Register custom element definition using standard platform API
+		customElements.define(GrainResponsiveContainer.is, GrainResponsiveContainer);
+	</script>
+</dom-module>
