@@ -6,22 +6,29 @@
 	<template>
 		<style>
 			:host {
-				--background: none;
-				--mobile-background: none;
-				--tablet-background: none;
-				--padding: 0px;
-				--mobile-padding: 0px;
-				--tablet-padding: 0px;
 				--width: 100%;
 				--mobile-width: 100%;
 				--tablet-width: 100%;
+				--padding: 0px;
+				--mobile-padding: 0px;
+				--tablet-padding: 0px;
+				--margin: 0px;
+				--mobile-margin: 0px;
+				--tablet-margin: 0px;
+				--background: none;
+				--mobile-background: none;
+				--tablet-background: none;
+				--color: inherit;
 
 				width: var(--width);
 				padding: var(--padding);
+				margin: var(--margin);
 				background: var(--background);
+				color: var(--color);
 
 				display: flex;
 				justify-content: center;
+				align-items: center;
 				position: relative;
 				box-sizing: border-box;
 				flex-direction: column;
@@ -30,11 +37,13 @@
 			:host([is-mobile]) {
 				width: var(--mobile-width);
 				padding: var(--mobile-padding);
+				margin: var(--mobile-margin);
 				background: var(--mobile-background);
 			}
 			:host([is-tablet]) {
 				width: var(--tablet-width);
 				padding: var(--tablet-padding);
+				margin: var(--tablet-margin);
 				background: var(--tablet-background);
 			}
 
