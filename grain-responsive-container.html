@@ -19,19 +19,22 @@
 				--mobile-background: none;
 				--tablet-background: none;
 				--color: inherit;
+				--flex-flow: column;
+				--mobile-flex-flow: column;
+				--tablet-flex-flow: column;
 
-				width: var(--width);
+				width: var(--width, 100%);
 				padding: var(--padding);
 				margin: var(--margin);
 				background: var(--background);
 				color: var(--color);
+				flex-flow: var(--flex-flow);
 
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				position: relative;
 				box-sizing: border-box;
-				flex-direction: column;
 			}
 
 			:host([is-mobile]) {
@@ -39,12 +42,14 @@
 				padding: var(--mobile-padding);
 				margin: var(--mobile-margin);
 				background: var(--mobile-background);
+				flex-flow: var(--mobile-flex-flow);
 			}
 			:host([is-tablet]) {
 				width: var(--tablet-width);
 				padding: var(--tablet-padding);
 				margin: var(--tablet-margin);
 				background: var(--tablet-background);
+				flex-flow: var(--tablet-flex-flow);
 			}
 
 			:host([layout=fill]) {
