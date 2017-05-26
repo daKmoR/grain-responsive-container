@@ -10,14 +10,10 @@
 				--mobile-width: 100%;
 				--tablet-width: 100%;
 				--padding: 0px;
-				--mobile-padding: 0px;
-				--tablet-padding: 0px;
 				--margin: 0px;
 				--mobile-margin: 0px;
 				--tablet-margin: 0px;
 				--background: none;
-				--mobile-background: none;
-				--tablet-background: none;
 				--color: inherit;
 				--flex-flow: column;
 				--mobile-flex-flow: column;
@@ -39,16 +35,16 @@
 
 			:host([is-mobile]) {
 				width: var(--mobile-width);
-				padding: var(--mobile-padding);
+				padding: var(--mobile-padding, var(--padding));
 				margin: var(--mobile-margin);
-				background: var(--mobile-background);
+				background: var(--mobile-background, var(--background));
 				flex-flow: var(--mobile-flex-flow);
 			}
 			:host([is-tablet]) {
 				width: var(--tablet-width);
-				padding: var(--tablet-padding);
+				padding: var(--tablet-padding, var(--padding));
 				margin: var(--tablet-margin);
-				background: var(--tablet-background);
+				background: var(--tablet-background, var(--background));
 				flex-flow: var(--tablet-flex-flow);
 			}
 
